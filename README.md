@@ -1,5 +1,4 @@
 # Reinforcement_Learning
-# Reinforcement Learning
 
 ## Random Variable
 - a variable whose vales depend on outcomes of a random event
