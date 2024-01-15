@@ -105,5 +105,5 @@ $$U_t = R_t + \gamma \cdot R_{t+1} + \gamma^2 \cdot R_{t+2} + \gamma^3 \cdot R_{
 ![maze_1.gif](https://github.com/kerong2002/Reinforcement_Learning/blob/main/Book_L2/maze_1.gif)
 
 ## Taxi
-![taxi.gif](file:///C:/Users/User/Downloads/taxi_class.gif)
+![taxi.gif](https://github.com/kerong2002/Reinforcement_Learning/blob/main/GYM/taxi_class.gif)
 
