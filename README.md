@@ -14,20 +14,20 @@
 - PDF provides a relative likelihood that  the value of the random variable would equal that sample.
 - ex. Gaussian distribution
 
-$$ p(x) = \frac{1}{\sqrt{2\pi\sigma^2}}exp(-\frac{(x-\mu)^2}{2\sigma^2})$$
+$$\Large  p(x) = \frac{1}{\sqrt{2\pi\sigma^2}}exp(-\frac{(x-\mu)^2}{2\sigma^2})$$
 
 - Random variable **X** is in the domain **χ**
 - For continuous distribution,
-$$\int_{\chi}^{}p(x)dx=1$$
+$$\Large \int_{\chi}^{}p(x)dx=1$$
 - For discrete distribution,
-$$\sum {\scriptsize{x\in \chi}}^{} {\displaystyle p(x)}=1$$
+$$\Large \sum {\scriptsize{x\in \chi}}^{} {\displaystyle p(x)}=1$$
 
 ## Expectation
 - Random variable **X** is in the domain **χ**
 - For continuous distribution, the expectation of f(X) is:
-$$E[f(x)] = \int_{\chi}^{}p(x)f(x)dx=1$$
+$$\Large E[f(x)] = \int_{\chi}^{}p(x)f(x)dx=1$$
 - For discrete distribution, the expectation of f(X) is:
-$$E[f(x)] = \sum {\scriptsize{x\in \chi}}^{} {\displaystyle p(x)f(x)}=1$$
+$$\Large E[f(x)] = \sum {\scriptsize{x\in \chi}}^{} {\displaystyle p(x)f(x)}=1$$
 
 
 ## Random Sample
@@ -45,10 +45,10 @@ $p(s' | s , a) = P(S' = s' | S = s , A = a)$
 
 ## Return
 - Definition: Return(aka cumulative future reward)
-$$U_t = R_t + R_{t+1} + R_{t+2} + R_{t+3} + ...$$
+$$\Large U_t = R_t + R_{t+1} + R_{t+2} + R_{t+3} + ...$$
 - Definition: Discounted return(aka cumulative discounted future reward)
 **γ**: discount rate(tuning hyper-parameter)
-$$U_t = R_t + \gamma R_{t+1} + \gamma^2R_{t+2} + \gamma ^3R_{t+3} + ...$$
+$$\Large U_t = R_t + \gamma R_{t+1} + \gamma^2R_{t+2} + \gamma ^3R_{t+3} + ...$$
 
 #### At time step t, the return Ut is random
 - Two sources of randomness:
@@ -58,18 +58,18 @@ $$U_t = R_t + \gamma R_{t+1} + \gamma^2R_{t+2} + \gamma ^3R_{t+3} + ...$$
 ## Value Function Q(s, a)
 ### Action-value function
 - Definition: Action-value function for policy π.
-$$Qπ(s_t, a_t) = E[U_t|S_t = s_t, A_t = a_t]$$
+$$\Large Qπ(s_t, a_t) = E[U_t|S_t = s_t, A_t = a_t]$$
 
 ### Optimal action-value function
 - Definition: Optimal action-value function
-$$Q^*(s_t, a_t) = max\ Qπ(s_t, a_t)$$
+$$\Large Q^*(s_t, a_t) = max\ Qπ(s_t, a_t)$$
 
 ### State-value function
 - Definition: State-value function
 - Action are discrete
-$$Vπ(s_t) = E_A[Qπ(s_t, A)] = Σ_aπ(a | s_t)‧Qπ(s_t, a)$$
+$$\Large Vπ(s_t) = E_A[Qπ(s_t, A)] = Σ_aπ(a | s_t)‧Qπ(s_t, a)$$
 - Action are continuous
-$$Vπ(s
+$$\Large Vπ(s
 _t) = E_A[Qπ(s_t, A)] = ∫π(a | s_t)‧Qπ(s_t, a)$$
 
 ## Play game using reinforcement learning
@@ -83,21 +83,21 @@ _t) = E_A[Qπ(s_t, A)] = ∫π(a | s_t)‧Qπ(s_t, a)$$
 ### Temporal Difference (TD) Learning
 - Make a prediction: q = Q(w)
 - Finish the trop and get target y
-- Loss L = $$\frac{1}{2}(q-y)^2$$
-- Loss L = $$\frac{1}{2}(Q(w)-y)^2$$
-- Gradient: $$\frac{\delta L}{\delta w} = \frac{\delta q}{\delta w}\cdot \frac{\delta L}{\delta q} = (q - y) \cdot \frac{\delta Q(w)}{\delta w}$$
-- Grandient descent: $$W_{t+1} = W_t - \alpha \cdot \frac{\delta L}{\delta w}\vert_{w=w_t}$$
+- Loss L = $$\Large \frac{1}{2}(q-y)^2$$
+- Loss L = $$\Large \frac{1}{2}(Q(w)-y)^2$$
+- Gradient: $$\Large \frac{\delta L}{\delta w} = \frac{\delta q}{\delta w}\cdot \frac{\delta L}{\delta q} = (q - y) \cdot \frac{\delta Q(w)}{\delta w}$$
+- Grandient descent: $$\Large W_{t+1} = W_t - \alpha \cdot \frac{\delta L}{\delta w}\vert_{w=w_t}$$
 ## TD learning for DQN
-- equation: $$T_{A\rightarrow C} \approx T_{A\rightarrow B} + T_{B\rightarrow C}$$
-- In deep reinforcement learning: $$Q(s_t, a_t;w)\approx r_t + \gamma \cdot Q(s_{t+1}, a_{t+1};w)$$
+- equation: $$\Large T_{A\rightarrow C} \approx T_{A\rightarrow B} + T_{B\rightarrow C}$$
+- In deep reinforcement learning: $$\Large Q(s_t, a_t;w)\approx r_t + \gamma \cdot Q(s_{t+1}, a_{t+1};w)$$
 
-$$U_t = R_t + \gamma \cdot R_{t+1} + \gamma^2 \cdot R_{t+2} + \gamma^3 \cdot R_{t+3} + ...\\
+$$\Large U_t = R_t + \gamma \cdot R_{t+1} + \gamma^2 \cdot R_{t+2} + \gamma^3 \cdot R_{t+3} + ...\\
 =R_t + \gamma (R_{t+1} + \gamma \cdot R_{t+2} + \gamma^2 \cdot R_{t+3} + ...)\\
 = R_t + \gamma \cdot U_{t+1}$$
-- DQN's output, $\Large Q(s_t, a_t;w),\ is\ estimate\  of\ E[U_t]$
-- DQN's output, $\Large Q(s_{t+1}, a_{t+1};w),\ is\ estimate\  of\ E[U_{t+1}]$
-- Thus,$\Large Q(s_t, a_t;w) \approx
- E[R_t + \gamma \cdot Q(s_{t+1}, A_{t+1};w)]$
+- DQN's output, $$\Large Q(s_t, a_t;w),\ is\ estimate\  of\ E[U_t]$$
+- DQN's output, $$\Large Q(s_{t+1}, a_{t+1};w),\ is\ estimate\  of\ E[U_{t+1}]$$
+- Thus, $$\Large Q(s_t, a_t;w) \approx
+ E[R_t + \gamma \cdot Q(s_{t+1}, A_{t+1};w)]$$
  
 
 
