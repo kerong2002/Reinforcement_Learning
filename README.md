@@ -94,10 +94,10 @@ _t) = E_A[Qπ(s_t, A)] = ∫π(a | s_t)‧Qπ(s_t, a)$$
 $$U_t = R_t + \gamma \cdot R_{t+1} + \gamma^2 \cdot R_{t+2} + \gamma^3 \cdot R_{t+3} + ...\\
 =R_t + \gamma (R_{t+1} + \gamma \cdot R_{t+2} + \gamma^2 \cdot R_{t+3} + ...)\\
 = R_t + \gamma \cdot U_{t+1}$$
-- DQN's output, $$Q(s_t, a_t;w),\ is\ estimate\  of\ E[U_t]$$
-- DQN's output, $$Q(s_{t+1}, a_{t+1};w),\ is\ estimate\  of\ E[U_{t+1}]$$
-- Thus, $$Q(s_t, a_t;w) \approx
- E[R_t + \gamma \cdot Q(s_{t+1}, A_{t+1};w)]$$
+- DQN's output, $\Large Q(s_t, a_t;w),\ is\ estimate\  of\ E[U_t]$
+- DQN's output, $\Large Q(s_{t+1}, a_{t+1};w),\ is\ estimate\  of\ E[U_{t+1}]$
+- Thus,$\Large Q(s_t, a_t;w) \approx
+ E[R_t + \gamma \cdot Q(s_{t+1}, A_{t+1};w)]$
  
 
 
