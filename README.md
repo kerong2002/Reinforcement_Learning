@@ -104,6 +104,6 @@ $$U_t = R_t + \gamma \cdot R_{t+1} + \gamma^2 \cdot R_{t+2} + \gamma^3 \cdot R_{
 ## MAZE
 ![maze_1.gif](https://github.com/kerong2002/Reinforcement_Learning/blob/main/Book_L2/maze_1.gif)
 
-|日期|內容|
-|:--:|:-----:|
-|2023/10/10|state-value function <br> action-value function <br> OpenAI gym Cart Pole game test|
+## Taxi
+![taxi.gif](file:///C:/Users/User/Downloads/taxi_class.gif)
+
