@@ -6,6 +6,7 @@ from pynput.keyboard import Listener, KeyCode
 KEYBOARD_WIDTH = 900
 KEYBOARD_HEIGHT = 280
 
+
 def on_press(key):
     try:
         key_char = key.char
@@ -16,6 +17,7 @@ def on_press(key):
         for button in button_row:
             if button["text"] == key_char:
                 button.config(bg="red")
+
 
 def on_release(key):
     try:
@@ -28,9 +30,11 @@ def on_release(key):
             if button["text"] == key_char:
                 button.config(bg="black")
 
+
 def create_keyboard_button(parent, text, width, height):
     button = tk.Button(parent, text=text, width=width, height=height, bg="black", fg="white")
     return button
+
 
 window = tk.Tk()
 window.title("Virtual Keyboard")
@@ -45,7 +49,8 @@ keyboard_keys = [
     ['Ctrl', 'Win', 'Alt', 'space', 'Alt', 'Win', 'Menu', 'Ctrl']
 ]
 
-special_keys = {'Tab': 1.5, 'Caps Lock': 1.8, 'Shift': 2.497, 'Backspace': 2, 'space': 5, "\\": 1.49, "Enter": 2.2, "Ctrl": 1.5, "Win": 1.4, "Alt": 1.4, "Menu": 1.4}
+special_keys = {'Tab': 1.5, 'Caps Lock': 1.8, 'Shift': 2.497, 'Backspace': 2, 'space': 5, "\\": 1.49, "Enter": 2.2,
+                "Ctrl": 1.5, "Win": 1.4, "Alt": 1.4, "Menu": 1.4}
 
 default_button_width = KEYBOARD_WIDTH // max(len(row) for row in keyboard_keys) - 10
 default_button_height = KEYBOARD_HEIGHT // len(keyboard_keys)
