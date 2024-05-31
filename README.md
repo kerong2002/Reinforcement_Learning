@@ -88,16 +88,16 @@ _t) = E_A[Qπ(s_t, A)] = ∫π(a | s_t)‧Qπ(s_t, a)$$
 - Gradient: $$\Large \frac{\delta L}{\delta w} = \frac{\delta q}{\delta w}\cdot \frac{\delta L}{\delta q} = (q - y) \cdot \frac{\delta Q(w)}{\delta w}$$
 - Grandient descent: $$\Large W_{t+1} = W_t - \alpha \cdot \frac{\delta L}{\delta w}\vert_{w=w_t}$$
 ## TD learning for DQN
-- equation: $$\Large T_{A\rightarrow C} \approx T_{A\rightarrow B} + T_{B\rightarrow C}$$
-- In deep reinforcement learning: $$\Large Q(s_t, a_t;w)\approx r_t + \gamma \cdot Q(s_{t+1}, a_{t+1};w)$$
+- equation: $\Large T_{A\rightarrow C} \approx T_{A\rightarrow B} + T_{B\rightarrow C}$
+- In deep reinforcement learning: $\Large Q(s_t, a_t;w)\approx r_t + \gamma \cdot Q(s_{t+1}, a_{t+1};w)$
 
-$$\Large U_t = R_t + \gamma \cdot R_{t+1} + \gamma^2 \cdot R_{t+2} + \gamma^3 \cdot R_{t+3} + ...\\
+$\Large U_t = R_t + \gamma \cdot R_{t+1} + \gamma^2 \cdot R_{t+2} + \gamma^3 \cdot R_{t+3} + ...\\
 =R_t + \gamma (R_{t+1} + \gamma \cdot R_{t+2} + \gamma^2 \cdot R_{t+3} + ...)\\
 = R_t + \gamma \cdot U_{t+1}$$
 - DQN's output, $$\Large Q(s_t, a_t;w),\ is\ estimate\  of\ E[U_t]$$
 - DQN's output, $$\Large Q(s_{t+1}, a_{t+1};w),\ is\ estimate\  of\ E[U_{t+1}]$$
 - Thus, $$\Large Q(s_t, a_t;w) \approx
- E[R_t + \gamma \cdot Q(s_{t+1}, A_{t+1};w)]$$
+ E[R_t + \gamma \cdot Q(s_{t+1}, A_{t+1};w)]$
  
 
 
