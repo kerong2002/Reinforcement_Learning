@@ -83,10 +83,10 @@ _t) = E_A[Qπ(s_t, A)] = ∫π(a | s_t)‧Qπ(s_t, a)$$
 ### Temporal Difference (TD) Learning
 - Make a prediction: q = Q(w)
 - Finish the trop and get target y
-- Loss L = $$\Large \frac{1}{2}(q-y)^2$$
-- Loss L = $$\Large \frac{1}{2}(Q(w)-y)^2$$
-- Gradient: $$\Large \frac{\delta L}{\delta w} = \frac{\delta q}{\delta w}\cdot \frac{\delta L}{\delta q} = (q - y) \cdot \frac{\delta Q(w)}{\delta w}$$
-- Grandient descent: $$\Large W_{t+1} = W_t - \alpha \cdot \frac{\delta L}{\delta w}\vert_{w=w_t}$$
+- Loss L = $\Large \frac{1}{2}(q-y)^2$
+- Loss L = $\Large \frac{1}{2}(Q(w)-y)^2$
+- Gradient: $\Large \frac{\delta L}{\delta w} = \frac{\delta q}{\delta w}\cdot \frac{\delta L}{\delta q} = (q - y) \cdot \frac{\delta Q(w)}{\delta w}$
+- Grandient descent: $\Large W_{t+1} = W_t - \alpha \cdot \frac{\delta L}{\delta w}\vert_{w=w_t}$
 ## TD learning for DQN
 - equation: $\Large T_{A\rightarrow C} \approx T_{A\rightarrow B} + T_{B\rightarrow C}$
 - In deep reinforcement learning: $\Large Q(s_t, a_t;w)\approx r_t + \gamma \cdot Q(s_{t+1}, a_{t+1};w)$
